@@ -1,0 +1,101 @@
+object FrmDistancia: TFrmDistancia
+  Left = 0
+  Top = 0
+  Caption = 'Distancia'
+  ClientHeight = 480
+  ClientWidth = 320
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object LayoutDistancia: TLayout
+    Align = Center
+    Size.Width = 257.000000000000000000
+    Size.Height = 440.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object EditOrigem: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 0
+      Position.Y = 23.000000000000000000
+      Size.Width = 257.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object EditDestino: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 1
+      Position.Y = 78.000000000000000000
+      Size.Width = 257.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object LabelDistancia: TLabel
+      Align = Top
+      Position.Y = 110.000000000000000000
+      Size.Width = 257.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Distancia: 0km'
+      TabOrder = 2
+    end
+    object LabelTempo: TLabel
+      Align = Top
+      Position.Y = 133.000000000000000000
+      Size.Width = 257.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Tempo: 0hs'
+      TabOrder = 3
+    end
+    object LabelDestino: TLabel
+      Align = Top
+      Position.Y = 55.000000000000000000
+      Size.Width = 257.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Destino'
+      TabOrder = 4
+    end
+    object LabelOrigem: TLabel
+      Align = Top
+      Size.Width = 257.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Origem'
+      TabOrder = 5
+    end
+    object btnCalcular: TButton
+      Align = Bottom
+      Position.Y = 396.000000000000000000
+      Size.Width = 257.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Calcular'
+      OnClick = btnCalcularClick
+    end
+  end
+  object RESTClient1: TRESTClient
+    BaseURL = 'http://maps.googleapis.com/maps/api/distancematrix'
+    Params = <>
+    Left = 224
+    Top = 32
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 224
+    Top = 152
+  end
+  object RESTRequest1: TRESTRequest
+    Client = RESTClient1
+    Params = <>
+    Resource = 
+      'json?origins=Toledo+PR&Destinations=Curitiba+PR&mode=driving&lan' +
+      'guage=pt-BR&key=AlzaSyAwinJzF57fQddVy_dL8yTC01Zw7ufVuY8'
+    Response = RESTResponse1
+    Left = 223
+    Top = 92
+  end
+end
