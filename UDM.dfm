@@ -7,7 +7,6 @@ object dm: Tdm
       'Database=D:\Users\rrobasseto\Desktop\APP\BD\bd.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
-    Connected = True
     LoginPrompt = False
     AfterConnect = FDConnectionAfterConnect
     BeforeConnect = FDConnectionBeforeConnect
@@ -15,7 +14,6 @@ object dm: Tdm
     Top = 40
   end
   object FDQLogin: TFDQuery
-    Active = True
     Connection = FDConnection
     SQL.Strings = (
       'select * from login'
@@ -49,7 +47,6 @@ object dm: Tdm
     end
   end
   object FDQCarro: TFDQuery
-    Active = True
     Connection = FDConnection
     SQL.Strings = (
       'select * from carro'
@@ -119,7 +116,6 @@ object dm: Tdm
       end>
   end
   object FDQViagem: TFDQuery
-    Active = True
     Connection = FDConnection
     SQL.Strings = (
       'select * from viagem')
